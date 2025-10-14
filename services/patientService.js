@@ -67,3 +67,14 @@ export async function registerPatient(payload, actor = 'self-register') {
     throw err;
   }
 }
+
+/**
+ * Fetch patient by QR code
+ * @param {string} qr
+ * @returns patient object or null
+ */
+export async function getPatientByQr(qr) {
+    return await Patient.findOne({ 'card.qr': qr }).lean();
+}
+
+

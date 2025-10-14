@@ -1,5 +1,5 @@
 import express from 'express';
-import { checkDuplicate, register } from '../controllers/patientController.js';
+import { checkDuplicate, register, getPatientByQr  } from '../controllers/patientController.js';
 
 const router = express.Router();
 
@@ -14,5 +14,8 @@ router.post('/check-duplicate', checkDuplicate);
  * body: registration payload
  */
 router.post('/register', register);
+
+router.get('/qr/:qr', getPatientByQr);
+
 
 export default router;
