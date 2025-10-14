@@ -1,0 +1,1 @@
+2025-10-14T16:33:46.842Z [ERROR]: Failed to add medical record for patient PH-C3908526: MedicalRecord validation failed: patientId: Cast to ObjectId failed for value "PH-C3908526" (type string) at path "patientId" because of "BSONError"

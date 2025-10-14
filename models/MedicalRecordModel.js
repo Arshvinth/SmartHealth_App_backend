@@ -10,7 +10,7 @@ const MedicalRecordSchema = new mongoose.Schema({
         type: Date,
         default: Date.now
     },
-    doctorId: {
+    staffId: {
         type: String,
         ref:'Staff'
     }, // Staff/Doctor who created record
