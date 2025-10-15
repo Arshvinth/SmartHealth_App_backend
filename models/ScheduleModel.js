@@ -20,6 +20,10 @@ const ScheduleSchema = new mongoose.Schema({
         enum: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
         required: true
     },
+    scheduleDate: {
+        type: Date,
+        default: Date.nows
+    },
     startTime: {
         type: String,
         required: true

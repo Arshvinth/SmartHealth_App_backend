@@ -26,7 +26,7 @@ connectDB()
 //manageAppoitment Route
 app.use("/api/appointment", appointmentRouter);
 app.use("/api/schedule", scheduleRouter);
-app.use("api/doctor", doctorRoute);
+app.use("/api/doctor", doctorRoute);
 
 app.get('/', (req, res) => {
   res.send('API Working')

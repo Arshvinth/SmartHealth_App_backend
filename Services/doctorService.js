@@ -1,5 +1,5 @@
-import chargesModel from "../models/chargesModel";
-import doctorModel from "../models/doctorModel";
+import chargesModel from "../models/chargesModel.js";
+import doctorModel from "../models/doctorModel.js";
 
 class DoctorService {
 
@@ -16,6 +16,15 @@ class DoctorService {
 
         return details;
     }
+
+    async getDoctorSpecilization() {
+        const doctoSpecilize = await doctorModel.schema.path('specialization').enumValues;
+        return doctoSpecilize;
+    }
+
+
+
+
 }
 
 export default new DoctorService();

@@ -2,12 +2,12 @@ import appointmentService from "../Services/appointmentService.js";
 
 export const scheduleAppointment = async (req, res) => {
     try {
-        const { userId, doctorId, hospitalId, ScheduleId, charges } = req.body;
+        const { patientId, doctorId, hospitalId, scheduleId, charges } = req.body;
         const appointment = await appointmentService.createAppointment(
-            userId,
+            patientId,
             doctorId,
             hospitalId,
-            ScheduleId,
+            scheduleId,
             charges
         );
 

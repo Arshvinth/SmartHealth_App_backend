@@ -1,16 +1,18 @@
-import appointmentSchema from "../models/appointmentSchema.js";
+import AppointmentModel from "../models/appointmentSchema.js";
 import ScheduleModel from "../models/ScheduleModel.js";
 import scheduleService from "./scheduleService.js";
 
 class AppointmentService {
-    async createAppointment(userId, doctorId, hospitalId, ScheduleId, charges) {
-        const schedule = await ScheduleModel.findById(ScheduleId);
+    async createAppointment(patientId, doctorId, hospitalId, scheduleId, charges) {
+        console.log("Received ScheduleId:", scheduleId);
+        const schedule = await ScheduleModel.findById(scheduleId);
+        console.log("Schedule found:", schedule);
 
         if (!schedule) {
             throw new Error("Schedule not Found");
         }
 
-        await scheduleService.increaseBooking(ScheduleId);
+        await scheduleService.increaseBooking(scheduleId);
 
         const currentDate = new Date();
 
@@ -25,15 +27,16 @@ class AppointmentService {
 
         const appointmentDate = currentDate.toISOString().split('T')[0];
 
-        const appointment = new appointmentSchema({
-            userId,
+        const appointment = new AppointmentModel({
+            patientId,
             doctorId,
             hospitalId,
             appointmentDate,
             appointmentTime,
             charges,
             appointmentNumber,
-            ScheduleId
+            scheduleId,
+            status: "Scheduled"
         });
 
         await appointment.save();
@@ -44,7 +47,7 @@ class AppointmentService {
     }
 
     async cancelAppointment(appointmentId) {
-        const appointment = await appointmentSchema.findById(appointmentId);
+        const appointment = await AppointmentModel.findById(appointmentId);
         if (!appointment) {
             throw new Error("Appointment not found");
         }
@@ -58,13 +61,25 @@ class AppointmentService {
     }
 
     async getUserAppointments(userId) {
-        return appointmentSchema.find({ userId })
+        return AppointmentModel.find({ userId })
             .populate("doctorId")
             .populate("hospitalId")
             .populate("scheduleId")
             .sort({ createdAt: -1 });
     }
 
+    async markAsCompleted(appointmentId) {
+        const appointment = await AppointmentModel.findByIdAndUpdate(
+            appointmentId,
+            { status: "Completed" },
+            { new: true });
+
+        if (!appointment) {
+            throw new Error("Appointment  not found");
+        }
+
+        return appointment;
+    }
 
 
 }

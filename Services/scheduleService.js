@@ -4,7 +4,7 @@ class ScheduleService {
     async decreasingBooking(scheduleId) {
         const schedule = await ScheduleModel.findById(scheduleId);
         if (schedule && schedule.BookedCount > 0) {
-            schedule.BookedCount -= 1;
+            schedule.BookedCount = schedule.BookedCount - 1;
             await schedule.save();
         }
     }
