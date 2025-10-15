@@ -7,7 +7,7 @@
   "scripts": {
     "start": "node server.js",
     "dev": "node server.js",
-    "test": "jest --runInBand --coverage",
+    "test": "set NODE_ENV=test&& set NODE_OPTIONS=--experimental-vm-modules&& jest --runInBand --coverage",
     "lint": "eslint ."
   },
   "keywords": [],
