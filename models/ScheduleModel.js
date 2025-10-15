@@ -1,6 +1,10 @@
 import mongoose from "mongoose";
 
 const ScheduleSchema = new mongoose.Schema({
+    scheduleId: {
+        type: String,
+        required: true
+    },
     doctorId: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "Doctor",

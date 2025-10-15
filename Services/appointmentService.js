@@ -57,6 +57,14 @@ class AppointmentService {
         return appointment;
     }
 
+    async getUserAppointments(userId) {
+        return appointmentSchema.find({ userId })
+            .populate("doctorId")
+            .populate("hospitalId")
+            .populate("scheduleId")
+            .sort({ createdAt: -1 });
+    }
+
 
 
 }

@@ -1,10 +1,13 @@
 import mongoose from "mongoose"
 
 const hospitalSchema = new mongoose.Schema({
+    hospitalId: {
+        type: String,
+        required: true
+    },
     name: {
         type: String,
-        requires: true,
-
+        required: true,
     },
     branch: {
         type: String,

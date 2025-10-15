@@ -23,6 +23,22 @@ class ScheduleService {
 
     }
 
+    async getScheduleAvailability(scheduleId) {
+        const schedule = await ScheduleModel.find(scheduleId);
+        if (!schedule) {
+            throw new Error("Schedule Not Found");
+        }
+
+        const available = schedule.numberLimit - schedule.BookedCount > 0 ? schedule.numberLimit - schedule.BookedCount : 0;
+
+        return {
+            scheduleId,
+            available,
+            isFull: schedule.BookedCount >= schedule.numberLimit
+        };
+
+    }
+
 }
 
 export default new ScheduleService();
