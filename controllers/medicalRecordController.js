@@ -68,6 +68,18 @@ class MedicalRecordController {
       next(err);
     }
   }
+//   async getRecordsByPatient(req, res, next) {
+//   try {
+//     const { patientId } = req.params;
+//     // Populate vitals and diagnosis
+//     const records = await MedicalRecord.find({ patientId })
+//       .populate('vitals')       // Populate vitals collection
+//       .populate('diagnosis');   // Populate diagnosis collection
+//     res.status(200).json(records);
+//   } catch (err) {
+//     next(err);
+//   }
+// }
 }
 
 export default new MedicalRecordController();

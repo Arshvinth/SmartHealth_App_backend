@@ -1,2 +1,6 @@
 2025-10-14T16:33:46.842Z [ERROR]: Failed to add medical record for patient PH-C3908526: MedicalRecord validation failed: patientId: Cast to ObjectId failed for value "PH-C3908526" (type string) at path "patientId" because of "BSONError"
 2025-10-15T06:18:09.947Z [ERROR]: Failed to add medical record for patient 68ee02eedcb65d6c328ebe62: Diagnosis validation failed: condition: Path `condition` is required.
+2025-10-15T11:46:55.318Z [ERROR]: Failed to fetch medical records for patient P123: Cast to ObjectId failed for value "P123" (type string) at path "patientId" for model "MedicalRecord"
+2025-10-15T11:46:55.334Z [ERROR]: Failed to fetch medical records for patient P123: Cast to ObjectId failed for value "P123" (type string) at path "patientId" for model "MedicalRecord"
+2025-10-15T11:47:05.253Z [ERROR]: Failed to fetch medical records for patient P123: Cast to ObjectId failed for value "P123" (type string) at path "patientId" for model "MedicalRecord"
+2025-10-15T11:47:05.258Z [ERROR]: Failed to fetch medical records for patient P123: Cast to ObjectId failed for value "P123" (type string) at path "patientId" for model "MedicalRecord"
