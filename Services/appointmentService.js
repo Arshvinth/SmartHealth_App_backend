@@ -1,6 +1,6 @@
-import appointmentSchema from "../models/appointmentSchema";
-import ScheduleModel from "../models/ScheduleModel";
-import scheduleService from "./scheduleService";
+import appointmentSchema from "../models/appointmentSchema.js";
+import ScheduleModel from "../models/ScheduleModel.js";
+import scheduleService from "./scheduleService.js";
 
 class AppointmentService {
     async createAppointment(userId, doctorId, hospitalId, ScheduleId, charges) {

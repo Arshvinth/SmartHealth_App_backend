@@ -1,4 +1,4 @@
-import appointmentService from "../Services/appointmentService";
+import appointmentService from "../Services/appointmentService.js";
 
 export const scheduleAppointment = async (req, res) => {
     try {

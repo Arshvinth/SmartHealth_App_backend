@@ -19,6 +19,25 @@ const doctorModel = new mongoose.Schema({
     },
     specialization: {
         type: String,
+        enum: [
+            "Paediatrician",
+            "Dermatologist",
+            "Family Physician",
+            "Mental Health Professionals",
+            "Physician",
+            "Obstetrician and Gynaecologist",
+            "Cosmetic Gynecology",
+            "Orthopaedic Surgeon",
+            "Dietitians & Nutritionists",
+            "Physiotherapist",
+            "Clinical Embryoogist",
+            "Cardiologist",
+            "Gastroenterologist",
+            "Pulmonologist",
+            "ENT Surgeon",
+            "Nephrologist",
+            "Oncologist"
+        ],
         required: true,
     },
     email: {

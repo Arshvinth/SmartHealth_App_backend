@@ -1,4 +1,4 @@
-import scheduleService from "../Services/scheduleService";
+import scheduleService from "../Services/scheduleService.js";
 
 export const checkAvailability = async (req, res) => {
     try {

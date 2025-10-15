@@ -3,6 +3,9 @@ import cors from 'cors';
 import 'dotenv/config';
 import connectDB from './config/mongodb.js';
 import bodyParser from 'body-parser';
+import appointmentRouter from './routes/appointmentRoute.js';
+import scheduleRouter from './routes/scheduleRoute.js';
+import doctorRoute from './routes/doctorsRoute.js';
 
 // import Routes
 /*import routerName from './PATH';*/
@@ -20,7 +23,12 @@ connectDB()
 // Api endpoints
 /*app.use('/api/___',routerName);*/
 
-app.get('/',(req,res)=>{
+//manageAppoitment Route
+app.use("/api/appointment", appointmentRouter);
+app.use("/api/schedule", scheduleRouter);
+app.use("api/doctor", doctorRoute);
+
+app.get('/', (req, res) => {
   res.send('API Working')
 })
 

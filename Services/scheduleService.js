@@ -1,4 +1,4 @@
-import ScheduleModel from "../models/ScheduleModel";
+import ScheduleModel from "../models/ScheduleModel.js";
 
 class ScheduleService {
     async decreasingBooking(scheduleId) {
@@ -37,6 +37,15 @@ class ScheduleService {
             isFull: schedule.BookedCount >= schedule.numberLimit
         };
 
+    }
+
+    async getSchedules(doctorsId, hospitalsId) {
+        const schedules = await ScheduleModel.find({
+            doctorId: doctorsId,
+            hospitalId: hospitalsId
+        });
+
+        return schedules;
     }
 
 }
