@@ -3,3 +3,7 @@
 2025-10-14T16:52:56.086Z [INFO]: Vitals updated successfully
 2025-10-14T17:05:01.432Z [INFO]: Fetched all medical records
 2025-10-14T17:14:04.070Z [INFO]: Fetched medical records for patient
+2025-10-15T06:13:14.186Z [INFO]: Fetched all medical records, total: 1
+2025-10-15T06:18:09.947Z [ERROR]: Failed to add medical record for patient 68ee02eedcb65d6c328ebe62: Diagnosis validation failed: condition: Path `condition` is required.
+2025-10-15T06:21:02.087Z [INFO]: Medical record added for patient 68ee02eedcb65d6c328ebe62 by staff
+2025-10-15T06:25:35.027Z [INFO]: Fetched medical records for patient 68ee02eedcb65d6c328ebe62, total: 2
