@@ -28,7 +28,16 @@ const appointmentSchema = new mongoose.Schema({
         type: Number,
         required: true
     },
-    Status: {
+    appointmentNumber: {
+        type: Number,
+        required: true
+    },
+    scheduleId: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Schedule",
+        required: true
+    },
+    status: {
         type: String,
         enum: ["Scheduled", "Cancelled", "Completed"],
         default: "Scheduled"

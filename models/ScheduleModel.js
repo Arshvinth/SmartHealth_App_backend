@@ -20,10 +20,14 @@ const ScheduleSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    endTime: {
-        type: String,
+    numberLimit: {
+        type: Number,
         required: true
     },
+    BookedCount: {
+        type: Number,
+        default: 0
+    }
 
 }, { timestamps: true });
 
