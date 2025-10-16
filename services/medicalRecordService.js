@@ -124,10 +124,10 @@ class MedicalRecordService {
     let session;
 
     try {
-      // ✅ Validation
+      // Validation
       validateMedicalRecordInput(data);
 
-      // ✅ Start transaction
+      // Start transaction
       session = await MedicalRecord.startSession();
       session.startTransaction();
 
@@ -147,7 +147,7 @@ class MedicalRecordService {
       await session.commitTransaction();
       session.endSession();
 
-      // ✅ Audit & Info logging
+      // Audit & Info logging
       await logAudit({
         action: 'ADD_MEDICAL_RECORD',
         actor,

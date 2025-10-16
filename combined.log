@@ -125,3 +125,50 @@
 2025-10-15T13:43:41.054Z [INFO]: Fetched medical records for patient 68ee02eedcb65d6c328ebe62, total: 3
 2025-10-15T13:43:49.200Z [INFO]: Fetched medical records for patient 68ee02eedcb65d6c328ebe62, total: 3
 2025-10-15T13:59:58.456Z [INFO]: Fetched medical records for patient 68ee02eedcb65d6c328ebe62, total: 3
+2025-10-16T05:13:10.541Z [INFO]: Fetched medical records for patient 68ee02eedcb65d6c328ebe62, total: 3
+2025-10-16T05:13:10.576Z [INFO]: Fetched medical records for patient 68ee02eedcb65d6c328ebe62, total: 3
+2025-10-16T05:13:16.821Z [INFO]: Fetched medical records for patient 68ee02eedcb65d6c328ebe62, total: 3
+2025-10-16T05:16:52.914Z [INFO]: Fetched medical records for patient 68ee02eedcb65d6c328ebe62, total: 3
+2025-10-16T05:16:52.967Z [INFO]: Fetched medical records for patient 68ee02eedcb65d6c328ebe62, total: 3
+2025-10-16T05:16:59.983Z [INFO]: Fetched medical records for patient 68ee02eedcb65d6c328ebe62, total: 3
+2025-10-16T05:20:29.767Z [INFO]: Fetched medical records for patient 68ee02eedcb65d6c328ebe62, total: 3
+2025-10-16T05:21:58.903Z [INFO]: Fetched medical records for patient 68ee02eedcb65d6c328ebe62, total: 3
+2025-10-16T05:24:38.801Z [INFO]: Fetched medical records for patient 68ee02eedcb65d6c328ebe62, total: 3
+2025-10-16T05:24:38.814Z [INFO]: Fetched medical records for patient 68ee02eedcb65d6c328ebe62, total: 3
+2025-10-16T05:24:41.218Z [INFO]: Fetched medical records for patient 68ee02eedcb65d6c328ebe62, total: 3
+2025-10-16T12:08:16.600Z [ERROR]: Failed to add medical record for patient 68f0e030690c766c151e63a6: staffId is required
+2025-10-16T12:08:17.228Z [ERROR]: Failed to add medical record for patient undefined: patientId is required
+2025-10-16T12:25:55.448Z [INFO]: Fetched medical records for patient 68f0e1b48c8ed6799ad8ea15, total: 0
+2025-10-16T12:25:55.455Z [INFO]: Fetched medical records for patient 68f0e1b48c8ed6799ad8ea15, total: 0
+2025-10-16T12:28:16.343Z [INFO]: Medical record added for patient 68f0e1b48c8ed6799ad8ea15 by staff
+2025-10-16T12:28:18.855Z [INFO]: Fetched medical records for patient 68f0e1b48c8ed6799ad8ea15, total: 1
+2025-10-16T12:28:26.049Z [INFO]: Fetched medical records for patient 68f0e1b48c8ed6799ad8ea15, total: 1
+2025-10-16T12:29:24.081Z [INFO]: Fetched medical records for patient 68f0e1b48c8ed6799ad8ea15, total: 1
+2025-10-16T12:29:41.224Z [INFO]: Fetched medical records for patient 68f0e1b48c8ed6799ad8ea15, total: 1
+2025-10-16T12:30:09.073Z [INFO]: Fetched medical records for patient 68f0e1b48c8ed6799ad8ea15, total: 1
+2025-10-16T12:31:30.955Z [INFO]: Fetched medical records for patient 68f0e1b48c8ed6799ad8ea15, total: 1
+2025-10-16T12:31:30.966Z [INFO]: Fetched medical records for patient 68f0e1b48c8ed6799ad8ea15, total: 1
+2025-10-16T12:31:39.277Z [INFO]: Fetched medical records for patient 68f0e1b48c8ed6799ad8ea15, total: 1
+2025-10-16T12:32:09.193Z [INFO]: Fetched medical records for patient 68f0e1b48c8ed6799ad8ea15, total: 1
+2025-10-16T12:32:12.911Z [INFO]: Fetched medical records for patient 68f0e1b48c8ed6799ad8ea15, total: 1
+2025-10-16T12:32:22.515Z [INFO]: Fetched medical records for patient 68f0e1b48c8ed6799ad8ea15, total: 1
+2025-10-16T12:32:28.396Z [INFO]: Fetched medical records for patient 68f0e1b48c8ed6799ad8ea15, total: 1
+2025-10-16T12:32:34.095Z [INFO]: Fetched medical records for patient 68f0e1b48c8ed6799ad8ea15, total: 1
+2025-10-16T12:37:32.414Z [INFO]: Fetched medical records for patient 68f0e1b48c8ed6799ad8ea15, total: 1
+2025-10-16T12:39:30.213Z [INFO]: Fetched medical records for patient 68f0e1b48c8ed6799ad8ea15, total: 1
+2025-10-16T12:43:09.511Z [INFO]: Fetched medical records for patient 68f0e1b48c8ed6799ad8ea15, total: 1
+2025-10-16T12:44:08.552Z [INFO]: Vitals updated successfully
+2025-10-16T12:44:10.003Z [INFO]: Fetched medical records for patient 68f0e1b48c8ed6799ad8ea15, total: 1
+2025-10-16T12:46:47.690Z [INFO]: Fetched medical records for patient 68f0e1b48c8ed6799ad8ea15, total: 1
+2025-10-16T12:47:40.047Z [INFO]: Fetched medical records for patient 68f0e1b48c8ed6799ad8ea15, total: 1
+2025-10-16T12:47:40.880Z [INFO]: Fetched medical records for patient 68f0e1b48c8ed6799ad8ea15, total: 1
+2025-10-16T12:47:58.469Z [INFO]: Fetched medical records for patient 68f0e1b48c8ed6799ad8ea15, total: 1
+2025-10-16T12:48:09.764Z [INFO]: Fetched medical records for patient 68f0e1b48c8ed6799ad8ea15, total: 1
+2025-10-16T12:48:17.403Z [INFO]: Fetched medical records for patient 68f0e1b48c8ed6799ad8ea15, total: 1
+2025-10-16T12:49:11.559Z [INFO]: Fetched medical records for patient 68f0e1b48c8ed6799ad8ea15, total: 1
+2025-10-16T12:55:37.017Z [ERROR]: Failed to add medical record for patient 68f0eb47d72c41d62532dcba: staffId is required
+2025-10-16T12:55:37.614Z [ERROR]: Failed to add medical record for patient undefined: patientId is required
+2025-10-16T12:57:32.651Z [ERROR]: Failed to add medical record for patient 68f0ebbb2cda0ac4d7759da4: staffId is required
+2025-10-16T12:57:33.913Z [ERROR]: Failed to add medical record for patient undefined: patientId is required
+2025-10-16T13:02:46.899Z [ERROR]: Failed to add medical record for patient 68f0ecf5030213a48c88370b: staffId is required
+2025-10-16T13:02:48.221Z [ERROR]: Failed to add medical record for patient undefined: patientId is required

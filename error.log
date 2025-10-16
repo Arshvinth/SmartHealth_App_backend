@@ -4,3 +4,11 @@
 2025-10-15T11:46:55.334Z [ERROR]: Failed to fetch medical records for patient P123: Cast to ObjectId failed for value "P123" (type string) at path "patientId" for model "MedicalRecord"
 2025-10-15T11:47:05.253Z [ERROR]: Failed to fetch medical records for patient P123: Cast to ObjectId failed for value "P123" (type string) at path "patientId" for model "MedicalRecord"
 2025-10-15T11:47:05.258Z [ERROR]: Failed to fetch medical records for patient P123: Cast to ObjectId failed for value "P123" (type string) at path "patientId" for model "MedicalRecord"
+2025-10-16T12:08:16.600Z [ERROR]: Failed to add medical record for patient 68f0e030690c766c151e63a6: staffId is required
+2025-10-16T12:08:17.228Z [ERROR]: Failed to add medical record for patient undefined: patientId is required
+2025-10-16T12:55:37.017Z [ERROR]: Failed to add medical record for patient 68f0eb47d72c41d62532dcba: staffId is required
+2025-10-16T12:55:37.614Z [ERROR]: Failed to add medical record for patient undefined: patientId is required
+2025-10-16T12:57:32.651Z [ERROR]: Failed to add medical record for patient 68f0ebbb2cda0ac4d7759da4: staffId is required
+2025-10-16T12:57:33.913Z [ERROR]: Failed to add medical record for patient undefined: patientId is required
+2025-10-16T13:02:46.899Z [ERROR]: Failed to add medical record for patient 68f0ecf5030213a48c88370b: staffId is required
+2025-10-16T13:02:48.221Z [ERROR]: Failed to add medical record for patient undefined: patientId is required
