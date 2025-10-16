@@ -1,11 +1,14 @@
-import mongoose from 'mongoose';
+import mongoose from "mongoose";
 
-const MedicalHistorySchema = new mongoose.Schema({
-  allergies: [String],
-  chronicConditions: [String],
-  medications: [String],
-  bloodGroup: { type: String }
-}, { _id: false });
+const MedicalHistorySchema = new mongoose.Schema(
+  {
+    allergies: [String],
+    chronicConditions: [String],
+    medications: [String],
+    bloodGroup: { type: String },
+  },
+  { _id: false }
+);
 
 const PatientSchema = new mongoose.Schema({
   patientId: { type: String, required: true, unique: true },
@@ -22,8 +25,8 @@ const PatientSchema = new mongoose.Schema({
   createdAt: { type: Date, default: Date.now },
   card: {
     qr: String,
-    status: { type: String, enum: ['CREATED','PENDING'], default: 'CREATED' }
-  }
+    status: { type: String, enum: ["Active", "Inactive"], default: "Active" },
+  },
 });
 
-export default mongoose.model('Patient', PatientSchema);
+export default mongoose.model("Patient", PatientSchema);
