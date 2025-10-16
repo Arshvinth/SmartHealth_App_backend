@@ -10,24 +10,53 @@ import { errorHandler } from './middlewares/errorHandler.js';
 import { auditMiddleware } from './middlewares/auditLogger.js';
 import patientRoute from './routes/patientRoute.js';
 
+import medicalRecordRoutes from './routes/medicalRecordRoutes.js'
+import vitalsRoute from './routes/vitalsRoute.js';
+import staffRoutes from './routes/staffRoute.js';
+
+// import Routes
+/*import routerName from './PATH';*/
+
+//app config
 const app = express();
 
 // Middleware
 app.use(helmet());
 app.use(cors());
 app.use(express.json());
-app.use(morgan('combined'));
 app.use(bodyParser.json());
 
 // Routes
+// Morgan logger with skip
+app.use(morgan('combined', {
+  skip: (req) => req.url.startsWith('/inspector') || req.url.startsWith('/message')
+}));
+
+const port = process.env.PORT || 8081
+connectDB()
+
+// Api endpoints
 app.use(auditMiddleware);
 app.use('/api/patients', patientRoute);
 app.use(errorHandler);
 
+// MedicalRecord endpoints
+app.use('/api/medicalRecords', medicalRecordRoutes);
+app.use('/api/vitals', vitalsRoute);
+
+// Staff endpoints
+app.use('/api/staff', staffRoutes);
+
+// Patient endpoints
 app.get('/', (req, res) => {
   res.send('API Working');
 });
 
+app.get('/',(req,res)=>{
+  res.send('API Working')
+})
+
+// Start server
 // Only start server if not running under Jest
 if (process.env.NODE_ENV !== 'test') {
   const port = process.env.PORT || 8081;
@@ -37,5 +66,5 @@ if (process.env.NODE_ENV !== 'test') {
   });
 }
 
-// ✅ Export app for testing
+// Export app for testing
 export default app;

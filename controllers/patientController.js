@@ -62,3 +62,19 @@ export async function register(req, res, next) {
     next(err);
   }
 }
+
+export async function getPatientByQr(req, res) {
+    try {
+        const qr = req.params.qr;
+        const patient = await patientService.getPatientByQr(qr);
+
+        if (!patient) {
+            return res.status(404).json({ message: "Patient not found" });
+        }
+
+        res.json({ patient });
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ message: "Server error" });
+    }
+}
