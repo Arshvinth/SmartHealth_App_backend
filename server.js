@@ -6,6 +6,10 @@ import morgan from 'morgan';
 import 'dotenv/config';
 import connectDB from './config/mongodb.js';
 import bodyParser from 'body-parser';
+import appointmentRouter from './routes/appointmentRoute.js';
+import scheduleRouter from './routes/scheduleRoute.js';
+import doctorRoute from './routes/doctorsRoute.js';
+import chatRouter from './routes/chatbotRoutes.js';
 import { errorHandler } from './middlewares/errorHandler.js';
 import { auditMiddleware } from './middlewares/auditLogger.js';
 import patientRoute from './routes/patientRoute.js';
@@ -52,7 +56,13 @@ app.get('/', (req, res) => {
   res.send('API Working');
 });
 
-app.get('/',(req,res)=>{
+//manageAppoitment Route
+app.use("/api/appointment", appointmentRouter);
+app.use("/api/schedule", scheduleRouter);
+app.use("/api/doctor", doctorRoute);
+app.use("/api/chatbot", chatRouter);
+
+app.get('/', (req, res) => {
   res.send('API Working')
 })
 
