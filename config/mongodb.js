@@ -6,7 +6,7 @@ const connectDB = async () => {
     await mongoose.connect(`${process.env.MONGODB_URL}/SmartHealth`)
   } catch (error) {
     console.error(error);
-    process.exit(1);
+    // process.exit(1);
   }
 };
 
