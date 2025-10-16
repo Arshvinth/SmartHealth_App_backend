@@ -14,8 +14,9 @@ export function validatePatientPayload(payload = {}) {
   if (payload.email && !validator.isEmail(payload.email)) {
     errors.push('Invalid email format');
   }
-  if (payload.phone && !validator.isMobilePhone(payload.phone + '', 'any')) {
-    errors.push('Invalid phone number');
-  }
+  if (payload.phone && !/^[+0-9\s-]{7,15}$/.test(payload.phone)) {
+  errors.push('Invalid phone number');
+}
+
   return errors;
 }
