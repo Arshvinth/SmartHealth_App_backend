@@ -10,6 +10,7 @@ import { auditMiddleware } from './middlewares/auditLogger.js';
 import patientRoute from './routes/patientRoute.js'
 import medicalRecordRoutes from './routes/medicalRecordRoutes.js'
 import vitalsRoute from './routes/vitalsRoute.js';
+import staffRoutes from './routes/staffRoute.js';
 
 // import Routes
 /*import routerName from './PATH';*/
@@ -41,6 +42,9 @@ app.use(errorHandler);
 //MedicalRecord endpoints
 app.use('/api/medicalRecords', medicalRecordRoutes);
 app.use('/api/vitals', vitalsRoute);
+
+//Staff endpoints
+app.use('/api/staff', staffRoutes);
 
 app.get('/',(req,res)=>{
   res.send('API Working')

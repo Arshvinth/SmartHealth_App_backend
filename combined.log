@@ -172,3 +172,4 @@
 2025-10-16T12:57:33.913Z [ERROR]: Failed to add medical record for patient undefined: patientId is required
 2025-10-16T13:02:46.899Z [ERROR]: Failed to add medical record for patient 68f0ecf5030213a48c88370b: staffId is required
 2025-10-16T13:02:48.221Z [ERROR]: Failed to add medical record for patient undefined: patientId is required
+2025-10-16T14:51:42.008Z [INFO]: Staff Alice Johnson added successfully
