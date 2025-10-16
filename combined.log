@@ -174,3 +174,16 @@
 2025-10-16T13:02:48.221Z [ERROR]: Failed to add medical record for patient undefined: patientId is required
 2025-10-16T14:51:42.008Z [INFO]: Staff Alice Johnson added successfully
 2025-10-16T16:07:21.444Z [INFO]: Staff Kate added successfully
+2025-10-16T16:33:28.699Z [INFO]: Fetched medical records for patient 68f10e7d64f922ab56ded205, total: 0
+2025-10-16T16:33:29.580Z [INFO]: Fetched medical records for patient 68f10e7d64f922ab56ded205, total: 0
+2025-10-16T16:34:57.244Z [INFO]: Medical record added for patient 68f10e7d64f922ab56ded205 by staff
+2025-10-16T16:34:58.679Z [INFO]: Fetched medical records for patient 68f10e7d64f922ab56ded205, total: 1
+2025-10-16T16:36:28.054Z [INFO]: Fetched medical records for patient 68f10e7d64f922ab56ded205, total: 1
+2025-10-16T16:36:28.067Z [INFO]: Fetched medical records for patient 68f10e7d64f922ab56ded205, total: 1
+2025-10-16T16:36:56.145Z [INFO]: Vitals updated successfully
+2025-10-16T16:36:57.621Z [INFO]: Fetched medical records for patient 68f10e7d64f922ab56ded205, total: 1
+2025-10-16T16:37:11.481Z [INFO]: Fetched medical records for patient 68f10e7d64f922ab56ded205, total: 1
+2025-10-16T16:37:25.709Z [INFO]: Fetched medical records for patient 68f10e7d64f922ab56ded205, total: 1
+2025-10-16T16:38:46.112Z [INFO]: Medical record added for patient 68f10e7d64f922ab56ded205 by staff
+2025-10-16T16:38:48.495Z [INFO]: Fetched medical records for patient 68f10e7d64f922ab56ded205, total: 2
+2025-10-16T16:38:54.511Z [INFO]: Fetched medical records for patient 68f10e7d64f922ab56ded205, total: 2

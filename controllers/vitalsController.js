@@ -6,7 +6,7 @@ class VitalsController {
     try {
       const { vitalsId } = req.params;
       const data = req.body;
-      const actor = req.body.actor || 'staff'; // optional: track who updates
+      const actor = req.body.actor || 'staff'; 
 
       const updatedVitals = await VitalsService.updateVitals(vitalsId, data, actor);
       res.status(200).json(updatedVitals);

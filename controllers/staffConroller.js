@@ -1,5 +1,3 @@
-//Comment
-
 import StaffService from '../services/staffService.js';
 
 class StaffController {
