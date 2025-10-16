@@ -22,6 +22,20 @@ class DoctorService {
         return doctoSpecilize;
     }
 
+    async findDoctorByName(name) {
+        const doctorDetails = await doctorModel.findOne({
+            name: new RegExp(name, "i")
+        });
+
+        return doctorDetails;
+    }
+
+    async getHospitalForDoctor(doctorId) {
+        return await chargesModel.find({ doctorId })
+            .populate("hospitalId", "name location")
+            .lean();
+    }
+
 
 
 
