@@ -12,4 +12,6 @@ router.get('/allStaff', StaffController.getAllStaff);
 // Get staff by staffId
 router.get('/getOneStaff/:staffId', StaffController.getStaffById);
 
+router.post('/login', StaffController.login);
+
 export default router;
