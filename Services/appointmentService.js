@@ -3,13 +3,18 @@ import ScheduleModel from "../models/ScheduleModel.js";
 import scheduleService from "./scheduleService.js";
 
 class AppointmentService {
-    async createAppointment(patientId, doctorId, hospitalId, scheduleId, charges) {
+    async createAppointment(patientId, doctorId, hospitalId, scheduleId, charges, patientInfo, paymentMethod) {
         console.log("Received ScheduleId:", scheduleId);
         const schedule = await ScheduleModel.findById(scheduleId);
         console.log("Schedule found:", schedule);
 
+        //const patientId = "68efe6401c0f65de24140471";
         if (!schedule) {
             throw new Error("Schedule not Found");
+        }
+
+        if (!patientInfo || !patientInfo.name || !patientInfo.email || !patientInfo.phone) {
+            throw new Error("Patient information (name, email, phone) is required");
         }
 
         await scheduleService.increaseBooking(scheduleId);
@@ -36,7 +41,9 @@ class AppointmentService {
             charges,
             appointmentNumber,
             scheduleId,
-            status: "Scheduled"
+            patientInfo,
+            paymentMethod,
+            status: "Completed"
         });
 
         await appointment.save();

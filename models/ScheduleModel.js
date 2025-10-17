@@ -1,10 +1,7 @@
 import mongoose from "mongoose";
 
 const ScheduleSchema = new mongoose.Schema({
-    scheduleId: {
-        type: String,
-        required: true
-    },
+
     doctorId: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "Doctor",
@@ -35,7 +32,11 @@ const ScheduleSchema = new mongoose.Schema({
     BookedCount: {
         type: Number,
         default: 0
-    }
+    },
+    scheduleKeyId: {
+        type: String,
+        required: true
+    },
 
 }, { timestamps: true });
 
