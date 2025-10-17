@@ -76,3 +76,14 @@ export const getUserAppointments = async (req, res) => {
         })
     }
 }
+
+export const getPatientVisits = async (req, res) => {
+    try {
+        const filters = req.query;
+        const visits = await appointmentService.getPatientVisits(filters);
+        res.status(200).json(visits);
+    } catch (error) {
+        console.error("Error fetching patient visits:", error);
+        res.status(500).json({ message: "Server error", error });
+    }
+};

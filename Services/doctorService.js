@@ -13,7 +13,6 @@ class DoctorService {
         return doctorDetails;
     }
 
-
     async getDoctorHospitals(doctorId) {
         try {
             // Validate doctorId
@@ -68,9 +67,21 @@ class DoctorService {
             .lean();
     }
 
-
-
-
+    // Get doctor count per specialization (for chart)
+    async getDoctorSpecializationSummary() {
+        const result = await doctorModel.aggregate([
+            {
+                $group: {
+                    _id: "$specialization",
+                    count: { $sum: 1 },
+                },
+            },
+            {
+                $sort: { count: -1 }, // sort by count descending
+            },
+        ]);
+        return result;
+    }
 }
 
 export default new DoctorService();

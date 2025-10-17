@@ -110,6 +110,56 @@ class AppointmentService {
         return appointment;
     }
 
+    // Aggregate patient visits per day (or dynamically by filter)
+    async getPatientVisits(filters = {}) {
+        const matchStage = {};
+
+        // Optional filters
+        if (filters.startDate && filters.endDate) {
+            matchStage.bookingDate = {
+                $gte: new Date(filters.startDate),
+                $lte: new Date(filters.endDate),
+            };
+        }
+
+        if (filters.department && filters.department !== "All") {
+            // Assuming doctor model has a specialization (department)
+            matchStage.specialization = filters.department;
+        }
+
+        if (filters.patientType && filters.patientType !== "All") {
+            matchStage["patientInfo.type"] = filters.patientType;
+        }
+
+        // Group appointments by day of the week (for 1 week range)
+        const visits = await Appointment.aggregate([
+            { $match: matchStage },
+            {
+                $project: {
+                    dayOfWeek: { $dayOfWeek: "$bookingDate" }, // 1=Sunday ... 7=Saturday
+                },
+            },
+            {
+                $group: {
+                    _id: "$dayOfWeek",
+                    totalVisits: { $sum: 1 },
+                },
+            },
+            { $sort: { _id: 1 } },
+        ]);
+
+        // Map day numbers to weekday names
+        const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+        const formattedData = days.map((day, index) => {
+            const found = visits.find(v => v._id === index + 1);
+            return {
+                day,
+                totalVisits: found ? found.totalVisits : 0,
+            };
+        });
+
+        return formattedData;
+    }
 
 }
 

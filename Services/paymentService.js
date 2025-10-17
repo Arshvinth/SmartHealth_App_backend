@@ -27,7 +27,48 @@ class PaymentService {
 
     };
 
+    // Method for payment breakdown
+    async getPaymentBreakdown(filters = {}) {
+        const matchStage = {};
 
+        // Optional filtering (by date range, department, etc.)
+        if (filters.startDate && filters.endDate) {
+            matchStage.paymentDate = {
+                $gte: new Date(filters.startDate),
+                $lte: new Date(filters.endDate),
+            };
+        }
+
+        if (filters.department && filters.department !== "All") {
+            // Assuming Appointment or Doctor references department
+            matchStage.department = filters.department;
+        }
+
+        // Aggregate payments grouped by paymentMethod
+        const breakdown = await paymentModel.aggregate([
+            { $match: matchStage },
+            {
+                $group: {
+                    _id: "$paymentMethod",
+                    totalAmount: { $sum: "$totalAmount" },
+                    count: { $sum: 1 },
+                },
+            },
+            {
+                $project: {
+                    _id: 0,
+                    name: "$_id",
+                    amount: "$totalAmount",
+                    count: 1,
+                },
+            },
+            {
+                $sort: { amount: -1 },
+            },
+        ]);
+
+        return breakdown;
+    }
 
 };
 

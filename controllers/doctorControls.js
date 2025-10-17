@@ -54,3 +54,18 @@ export const getDoctorSpecilization = async (req, res) => {
         });
     }
 };
+
+// For specialization report
+export const getDoctorSpecilizationReport = async (req, res) => {
+  try {
+    const specializationStats = await doctorService.getDoctorSpecializationSummary();
+    res.status(200).json({
+      success: true,
+      message: "Doctor specialization summary fetched successfully",
+      data: specializationStats,
+    });
+  } catch (error) {
+    console.error("Error fetching specialization summary:", error);
+    res.status(500).json({ success: false, message: "Server error" });
+  }
+};
