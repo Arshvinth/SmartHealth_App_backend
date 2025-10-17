@@ -94,7 +94,7 @@ export async function registerPatient(payload, actor = "self-register") {
       medicalHistory: payload.medicalHistory,
       card: {
         qr: `QR:${patientId}`,
-        status: cardStatus, // ✅ guaranteed valid
+        status: cardStatus, //guaranteed valid
       },
       createdAt: new Date(),
     });
@@ -120,7 +120,5 @@ export async function registerPatient(payload, actor = "self-register") {
  * @returns patient object or null
  */
 export async function getPatientByQr(qr) {
-    return await Patient.findOne({ 'card.qr': qr }).lean();
+  return await Patient.findOne({ "card.qr": qr }).lean();
 }
-
-
