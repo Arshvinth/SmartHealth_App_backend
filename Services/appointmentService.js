@@ -68,11 +68,33 @@ class AppointmentService {
     }
 
     async getUserAppointments(userId) {
-        return AppointmentModel.find({ userId })
-            .populate("doctorId")
-            .populate("hospitalId")
+        let appointments = await AppointmentModel.find({ patientId: userId })
+            .populate("doctorId", "name specialization") // Only get specific fields
+            .populate("hospitalId", "name address")
             .populate("scheduleId")
-            .sort({ createdAt: -1 });
+            .sort({ createdAt: -1 })
+            .lean();
+
+        console.log('📊 Query results with patientId:', appointments?.length || 0);
+        if (!appointments || appointments.length === 0) {
+            console.log('🔄 Trying with userId field...');
+            appointments = await AppointmentModel.find({ userId: userId })
+                .populate("doctorId", "name specialization")
+                .populate("hospitalId", "name address")
+                .populate("scheduleId")
+                .sort({ createdAt: -1 })
+                .lean();
+
+            console.log('📊 Query results with userId:', appointments?.length || 0);
+        }
+
+        if (!appointments || appointments.length === 0) {
+            console.log('ℹ️ No appointments found for user:', userId);
+            return []; // Return empty array instead of throwing error
+        }
+
+        console.log('✅ Final appointments:', appointments);
+        return appointments;
     }
 
     async markAsCompleted(appointmentId) {

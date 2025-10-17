@@ -47,15 +47,26 @@ export const cancelAppointment = async (req, res) => {
 
 export const getUserAppointments = async (req, res) => {
     try {
-        console.log("Appointment details found");
+        console.log("Appointment details found - Starting to fetch...");
         const { userId } = req.params;
-        const appointment = await appointmentService.getUserAppointments(userId);
+        console.log("User ID received:", userId);
 
-        console.log("Appointment:", appointment);
+        if (!userId || userId === 'undefined') {
+            throw new Error("User ID is required");
+        }
+
+        console.log("🔄 Calling appointmentService.getUserAppointments...");
+        const appointments = await appointmentService.getUserAppointments(userId);
+
+
+        console.log("✅ Appointments retrieved:", {
+            count: appointments?.length || 0,
+            data: appointments
+        });
 
         res.json({
             success: true,
-            appointment
+            appointments: appointments || []
         });
     } catch (error) {
         console.log("Appointment details not found");
