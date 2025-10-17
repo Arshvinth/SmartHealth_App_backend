@@ -39,9 +39,6 @@ class StaffService {
             fullName: { $regex: new RegExp(`^${usernameTrimmed}$`, 'i') }
         }).select('+password');
 
-        console.log('Input username:', usernameTrimmed);
-        console.log('Input password:', passwordTrimmed);
-
         if (!staff || staff.password !== passwordTrimmed) {
             throw new Error('Invalid username or password');
         }

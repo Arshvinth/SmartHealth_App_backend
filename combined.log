@@ -200,3 +200,11 @@
 2025-10-17T10:36:27.601Z [INFO]: Fetched medical records for patient 68f21b4af46cce5073191b94, total: 1
 2025-10-17T12:12:39.014Z [INFO]: Fetched medical records for patient 68f22f4469857439c02c6866, total: 0
 2025-10-17T12:12:39.026Z [INFO]: Fetched medical records for patient 68f22f4469857439c02c6866, total: 0
+2025-10-17T16:54:23.290Z [INFO]: Staff Ashwin added successfully
+2025-10-17T16:55:02.510Z [INFO]: Staff Randiv added successfully
+2025-10-17T17:51:18.427Z [INFO]: Fetched medical records for patient 68f2819b0f68c6873490cea3, total: 0
+2025-10-17T17:51:18.447Z [INFO]: Fetched medical records for patient 68f2819b0f68c6873490cea3, total: 0
+2025-10-17T17:51:58.911Z [INFO]: Medical record added for patient 68f2819b0f68c6873490cea3 by staff
+2025-10-17T17:52:00.877Z [INFO]: Fetched medical records for patient 68f2819b0f68c6873490cea3, total: 1
+2025-10-17T17:52:04.667Z [INFO]: Fetched medical records for patient 68f2819b0f68c6873490cea3, total: 1
+2025-10-17T17:52:21.342Z [INFO]: Fetched medical records for patient 68f2819b0f68c6873490cea3, total: 1
