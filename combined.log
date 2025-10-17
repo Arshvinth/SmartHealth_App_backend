@@ -187,3 +187,14 @@
 2025-10-16T16:38:46.112Z [INFO]: Medical record added for patient 68f10e7d64f922ab56ded205 by staff
 2025-10-16T16:38:48.495Z [INFO]: Fetched medical records for patient 68f10e7d64f922ab56ded205, total: 2
 2025-10-16T16:38:54.511Z [INFO]: Fetched medical records for patient 68f10e7d64f922ab56ded205, total: 2
+2025-10-17T10:06:19.573Z [INFO]: Fetched medical records for patient 68f212e8f46cce507318dfdd, total: 0
+2025-10-17T10:06:19.583Z [INFO]: Fetched medical records for patient 68f212e8f46cce507318dfdd, total: 0
+2025-10-17T10:07:17.537Z [INFO]: Fetched medical records for patient 68f212e8f46cce507318dfdd, total: 0
+2025-10-17T10:07:17.545Z [INFO]: Fetched medical records for patient 68f212e8f46cce507318dfdd, total: 0
+2025-10-17T10:17:13.497Z [INFO]: Fetched medical records for patient 68f216d8f46cce507318ec3f, total: 0
+2025-10-17T10:17:13.505Z [INFO]: Fetched medical records for patient 68f216d8f46cce507318ec3f, total: 0
+2025-10-17T10:35:29.313Z [INFO]: Fetched medical records for patient 68f21b4af46cce5073191b94, total: 0
+2025-10-17T10:35:29.323Z [INFO]: Fetched medical records for patient 68f21b4af46cce5073191b94, total: 0
+2025-10-17T10:36:20.170Z [INFO]: Medical record added for patient 68f21b4af46cce5073191b94 by staff
+2025-10-17T10:36:22.240Z [INFO]: Fetched medical records for patient 68f21b4af46cce5073191b94, total: 1
+2025-10-17T10:36:27.601Z [INFO]: Fetched medical records for patient 68f21b4af46cce5073191b94, total: 1
