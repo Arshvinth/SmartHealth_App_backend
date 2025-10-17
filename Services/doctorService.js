@@ -1,20 +1,52 @@
+import mongoose from "mongoose";
 import chargesModel from "../models/chargesModel.js";
 import doctorModel from "../models/doctorModel.js";
+import hospital from "../models/hospital.js";
+
 
 class DoctorService {
 
     async getDoctorDetails() {
+        console.log("Querying database for doctors...");
         const doctorDetails = await doctorModel.find();
-
+        console.log("Database result:", doctorDetails);
         return doctorDetails;
     }
 
-    async getDoctorHospitals(doctorId) {
-        const details = await chargesModel.find({ doctorId })
-            .populate("hospitalId")
-            .select("hospitalId name branch");
 
-        return details;
+    async getDoctorHospitals(doctorId) {
+        try {
+            // Validate doctorId
+            if (!doctorId || !mongoose.Types.ObjectId.isValid(doctorId)) {
+                throw new Error('Valid doctor ID is required');
+            }
+
+            // Get charges with hospital population
+            const charges = await chargesModel.find({ doctorId })
+                .populate("hospitalId")
+                .select("hospitalId hospitalCharge doctorCharge");
+
+            // Transform the data
+            const hospitals = charges.map(charge => {
+                const hospital = charge.hospitalId;
+                return {
+                    id: hospital._id, // Use _id instead of hospitalId
+                    name: hospital.name,
+                    branch: hospital.branch,
+                    phone: hospital.phone,
+                    email: hospital.email,
+                    hospitalKeyId: hospital.hospitalKeyId,
+                    hospitalCharge: charge.hospitalCharge,
+                    doctorCharge: charge.doctorCharge,
+                    totalCharge: charge.hospitalCharge + charge.doctorCharge
+                };
+            });
+
+            return hospitals;
+        } catch (error) {
+            console.error('Error in getDoctorHospitals:', error);
+            throw error;
+        }
     }
 
     async getDoctorSpecilization() {

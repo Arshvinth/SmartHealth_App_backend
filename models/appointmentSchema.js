@@ -37,6 +37,26 @@ const appointmentSchema = new mongoose.Schema({
         ref: "Schedule",
         required: true
     },
+    patientInfo: {
+        name: {
+            type: String,
+            required: true
+        },
+        email: {
+            type: String,
+            required: true
+        },
+        phone: {
+            type: String,
+            required: true
+        }
+
+    },
+    paymentMethod: {
+        type: String,
+        enum: ["Cash", "Card", "Insurance"],
+        default: "Cash"
+    },
     status: {
         type: String,
         enum: ["Scheduled", "Cancelled", "Completed"],
