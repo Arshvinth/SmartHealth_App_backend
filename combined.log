@@ -198,3 +198,5 @@
 2025-10-17T10:36:20.170Z [INFO]: Medical record added for patient 68f21b4af46cce5073191b94 by staff
 2025-10-17T10:36:22.240Z [INFO]: Fetched medical records for patient 68f21b4af46cce5073191b94, total: 1
 2025-10-17T10:36:27.601Z [INFO]: Fetched medical records for patient 68f21b4af46cce5073191b94, total: 1
+2025-10-17T12:12:39.014Z [INFO]: Fetched medical records for patient 68f22f4469857439c02c6866, total: 0
+2025-10-17T12:12:39.026Z [INFO]: Fetched medical records for patient 68f22f4469857439c02c6866, total: 0
