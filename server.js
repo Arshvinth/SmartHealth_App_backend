@@ -38,7 +38,7 @@ app.use(morgan('combined', {
 }));
 
 const port = process.env.PORT || 8081
-connectDB()
+// connectDB()
 
 // Api endpoints
 app.use(auditMiddleware);
