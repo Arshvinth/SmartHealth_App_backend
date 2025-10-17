@@ -18,6 +18,7 @@ import medicalRecordRoutes from './routes/medicalRecordRoutes.js'
 import vitalsRoute from './routes/vitalsRoute.js';
 import staffRoutes from './routes/staffRoute.js';
 
+
 // import Routes
 /*import routerName from './PATH';*/
 

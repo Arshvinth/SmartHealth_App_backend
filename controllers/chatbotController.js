@@ -1,4 +1,4 @@
-import { chatbotLogic } from "../Services/chatbotLogic";
+import { chatbotLogic } from "../Services/chatbotLogic.js";
 
 export const handleChatMessage = async (req, res) => {
     try {

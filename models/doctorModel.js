@@ -1,10 +1,7 @@
 import mongoose from "mongoose";
 
 const doctorModel = new mongoose.Schema({
-    doctorId: {
-        type: String,
-        required: true
-    },
+
     profileImage:
     {
         url: { type: String, required: true },
@@ -52,6 +49,10 @@ const doctorModel = new mongoose.Schema({
     },
     bio: {
         type: String
+    },
+    doctorKeyId: {
+        type: String,
+        required: true
     }
 
 

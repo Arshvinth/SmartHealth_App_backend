@@ -1,10 +1,7 @@
 import mongoose from "mongoose"
 
 const hospitalSchema = new mongoose.Schema({
-    hospitalId: {
-        type: String,
-        required: true
-    },
+
     name: {
         type: String,
         required: true,
@@ -17,6 +14,10 @@ const hospitalSchema = new mongoose.Schema({
     },
     email: {
         type: String,
+    },
+    hospitalKeyId: {
+        type: String,
+        required: true
     }
 }, { timestamps: true });
 

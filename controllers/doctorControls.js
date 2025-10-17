@@ -1,15 +1,19 @@
 import doctorService from "../Services/doctorService.js"
 
 export const getDoctors = async (req, res) => {
+    console.log("GET /doctorsList route hit");
     try {
+        console.log("Fetching doctors from service...");
         const doctors = await doctorService.getDoctorDetails();
+        console.log("Doctors found:", doctors.length);
         res.status(200).json({
             success: true,
             doctors
         });
     } catch (error) {
+        console.error("Error in getDoctors:", error);
         res.status(400).json({
-            success: true,
+            success: false,
             message: error.message
         });
     }
