@@ -13,11 +13,14 @@ export async function findPotentialDuplicates({
   nicOrPassport,
   dob,
 }) {
-  // Convert dob to date range to avoid time zone mismatches
-  // Defensive DOB parsing
+  if (!dob) {
+    throw new Error("Date of birth is required");
+  }
+
   const inputDob = new Date(dob);
   if (isNaN(inputDob.getTime())) {
-    throw new Error("Invalid date of birth");
+    console.error("Invalid DOB received:", dob); // log for debugging
+    throw new Error("Invalid date of birth. Expected format: YYYY-MM-DD");
   }
 
   const startOfDay = new Date(inputDob);
@@ -26,7 +29,7 @@ export async function findPotentialDuplicates({
   const endOfDay = new Date(inputDob);
   endOfDay.setHours(23, 59, 59, 999);
 
-  // Exact match NIC + DOB (by day)
+  // Exact NIC + DOB match
   const exact = await Patient.findOne({
     nicOrPassport,
     dob: { $gte: startOfDay, $lte: endOfDay },
