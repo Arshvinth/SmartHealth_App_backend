@@ -51,6 +51,11 @@ app.use("/api/appointment", appointmentRouter);
 app.use("/api/schedule", scheduleRouter);
 app.use("/api/doctor", doctorRoute);
 app.use("/api/chatbot", chatRouter);
+//MedicalRecord endpoints
+app.use('/api/medicalRecords', medicalRecordRoutes);
+app.use('/api/vitals', vitalsRoute);
+//Staff endpoints
+app.use('/api/staff', staffRoutes);
 
 app.get('/', (req, res) => {
   res.send('API Working')
