@@ -5,8 +5,6 @@
  */
 
 export function metaphoneKey(name = '') {
-  // Simple metaphone-like heuristic: uppercase, strip vowels except first char,
-  // collapse duplicates. Not perfect but works for phonetic clustering.
   if (!name) return '';
   let s = name.toUpperCase().replace(/[^A-Z]/g, '');
   const vowels = 'AEIOU';

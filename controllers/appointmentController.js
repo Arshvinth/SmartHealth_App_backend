@@ -55,11 +55,11 @@ export const getUserAppointments = async (req, res) => {
             throw new Error("User ID is required");
         }
 
-        console.log("🔄 Calling appointmentService.getUserAppointments...");
+        console.log("Calling appointmentService.getUserAppointments...");
         const appointments = await appointmentService.getUserAppointments(userId);
 
 
-        console.log("✅ Appointments retrieved:", {
+        console.log("Appointments retrieved:", {
             count: appointments?.length || 0,
             data: appointments
         });
