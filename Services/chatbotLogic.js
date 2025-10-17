@@ -1,7 +1,7 @@
-import { getUserState, resetUserState } from "../utils/chatbotState";
-import appointmentService from "./appointmentService";
-import doctorService from "./doctorService";
-import scheduleService from "./scheduleService";
+import { getUserState, resetUserState } from "../utils/chatbotState.js";
+import appointmentService from "./appointmentService.js";
+import doctorService from "./doctorService.js";
+import scheduleService from "./scheduleService.js";
 
 export const chatbotLogic = async (message, patientName) => {
 
