@@ -1,23 +1,9 @@
-// import mongoose from "mongoose";
-
-// const connectDB = async () => {
-//   try {
-//     mongoose.connection.on('connected', ()=> console.log("Database Connected"))
-//     await mongoose.connect(`${process.env.MONGODB_URL}/SmartHealth`)
-//   } catch (error) {
-//     console.error(error);
-//     // process.exit(1);
-//   }
-// };
-
-// export default connectDB
-
 import mongoose from "mongoose";
 
 const connectDB = async (uri) => {
   try {
     const mongoUri = uri || `${process.env.MONGODB_URL}/SmartHealth`;
-    if (mongoose.connection.readyState === 0) { // only connect if not already connected
+    if (mongoose.connection.readyState === 0) { 
       await mongoose.connect(mongoUri, {
         useNewUrlParser: true,
         useUnifiedTopology: true,
