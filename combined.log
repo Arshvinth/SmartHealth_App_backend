@@ -208,3 +208,6 @@
 2025-10-17T17:52:00.877Z [INFO]: Fetched medical records for patient 68f2819b0f68c6873490cea3, total: 1
 2025-10-17T17:52:04.667Z [INFO]: Fetched medical records for patient 68f2819b0f68c6873490cea3, total: 1
 2025-10-17T17:52:21.342Z [INFO]: Fetched medical records for patient 68f2819b0f68c6873490cea3, total: 1
+2025-10-19T17:30:34.191Z [ERROR]: Failed to add medical record for patient 68f5203919894ee5c9321448: Transaction numbers are only allowed on a replica set member or mongos
+2025-10-19T17:49:22.831Z [INFO]: Medical record added for patient 64f1234567890abcdef12345 by staff
+2025-10-19T18:07:07.967Z [INFO]: Medical record added for patient 64f1234567890abcdef12345 by staff
